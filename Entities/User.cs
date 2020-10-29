@@ -15,7 +15,7 @@ namespace Entities
 
         public InputType InputType { get; set; }
 
-        public InputSpeed Speed { get; set; }
+        public Speed Speed { get; set; }
 
         public Intervals Interval { get; set; }
 

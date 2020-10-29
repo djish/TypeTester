@@ -42,6 +42,18 @@
   <ItemGroup>
     <Compile Include="Diff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpeedAnalyzer.cs" />
+    <Compile Include="SpeedPropertyExtractor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{de27c2fa-501a-43f4-aef9-fb0ccf4fe95a}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{b49d8859-ee89-45a5-8ec5-1070d1ed206c}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

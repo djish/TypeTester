@@ -50,7 +50,7 @@ namespace JSTypeTester
 
         private void txtUsername_Enter(object sender, EventArgs e)
         {
-            ProcessLogin();
+            //ProcessLogin();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace JSTypeTester
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            ProcessLogin();
+            //ProcessLogin();
         }
     }
 }

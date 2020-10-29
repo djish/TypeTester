@@ -48,8 +48,6 @@ namespace DataManager
             return isSetup;
         }
 
-        
-
         public List<Intervals> GetSpeedIntervals()
         {
             List<Intervals> intervalList = new List<Intervals>();
@@ -65,5 +63,16 @@ namespace DataManager
 
             return intervalList;
         }
+
+        public List<Speed> LoadSpeeds(Language language, Entities.Stream stream)
+        {
+            return GetSpeeds(language, stream);
+        }
+        
+        public Speed LoadSpeedMetaData(Speed speed)
+        {
+            return GetSpeedMetadata(speed);
+        }
+
     }
 }

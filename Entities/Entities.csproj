@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputSpeed.cs" />
+    <Compile Include="Speed.cs" />
     <Compile Include="InputType.cs" />
     <Compile Include="Intervals.cs" />
     <Compile Include="Language.cs" />

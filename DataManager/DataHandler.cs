@@ -1,4 +1,5 @@
 ﻿using Entities;
+using SpeedAnalyzer;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -69,6 +70,32 @@ namespace DataManager
                 Directory.CreateDirectory(directoryPath);
             }
             return true;
+        }
+
+        protected List<Speed> GetSpeeds(Language language, Entities.Stream stream)
+        {
+            List<Speed> speeds = new List<Speed>();
+            string speedfolder = this.speedInputFolder + language.ToString().ToLower() + "/" + stream.ToString().ToLower() + "/";
+            foreach (string file in Directory.EnumerateFiles(speedfolder, "*.txt"))
+            {
+                string fileName = Path.GetFileNameWithoutExtension(file);
+                Speed speed = new Speed(fileName);
+                speed.Path = file;
+                speeds.Add(speed);
+            }
+
+            return speeds;
+        }
+
+        protected Speed GetSpeedMetadata(Speed speed)
+        {
+            speed.SpeedText = ReadSpeedText(speed.Path);
+            return SpeedPropertyExtractor.GetSpeedProperties(speed);
+        }
+
+        private string ReadSpeedText(string path)
+        {
+            return File.ReadAllText(path);
         }
     }
 }

@@ -44,7 +44,6 @@
     <Compile Include="DataHandler.cs" />
     <Compile Include="SpeedDataHandler.cs" />
     <Compile Include="StringCipher.cs" />
-    <Compile Include="UserDataHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +54,10 @@
     <ProjectReference Include="..\Logger\Logger.csproj">
       <Project>{b49d8859-ee89-45a5-8ec5-1070d1ed206c}</Project>
       <Name>Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpeedAnalyzer\SpeedAnalyzer.csproj">
+      <Project>{b87c1ab3-764d-4663-bf6e-82fe3708a5e0}</Project>
+      <Name>SpeedAnalyzer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

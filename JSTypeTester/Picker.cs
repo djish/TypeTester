@@ -28,21 +28,24 @@ namespace JSTypeTester
             List<Intervals> intervals = SpeedDataHandler.GetInstance().GetSpeedIntervals();
             this.cmbTime.DataSource = intervals;
             this.cmbTime.SelectedItem = intervals[1];
-            this.cmbTime.ValueMember = "Interval";
             this.cmbTime.DisplayMember = "Name";
         }
 
         private void btnBeginTest_Click(object sender, EventArgs e)
         {
             ProcessParameters();
-            if(this.currentSession.InputType == InputType.HardCopy)
+            this.Hide();
+            if (this.currentSession.InputType == InputType.HardCopy)
             {
                 //Begin Test
+                new TypeTester(this.currentSession).ShowDialog();
             }
             else
             {
                 //Open Speed Selection Window
+                new SpeedPicker(this.currentSession).ShowDialog();
             }
+            this.Close();
         }
 
         private void ProcessParameters()
@@ -50,7 +53,7 @@ namespace JSTypeTester
             this.currentSession.Interval = (Intervals) this.cmbTime.SelectedItem;
             this.currentSession.Language = this.radLangEnglish.Checked ? Language.English : Language.Malayalam;
             this.currentSession.InputType = this.radInputComputer.Checked ? InputType.Computer : InputType.HardCopy;
-            this.currentSession.Stream = this.radStreamLower.Checked ? Stream.Higher : Stream.Lower;
+            this.currentSession.Stream = this.radStreamLower.Checked ? Stream.Lower : Stream.Higher;
         }
 
         private void radInputHardCopy_Click(object sender, EventArgs e)
