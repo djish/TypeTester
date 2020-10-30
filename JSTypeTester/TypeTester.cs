@@ -130,7 +130,7 @@ namespace JSTypeTester
             speed.SpeedText = this.rTxtUserSpeed.Text;
 
             speed = SpeedPropertyExtractor.GetSpeedProperties(speed);
-            
+            //Need to extract the properteis and set to this.currentSessionUser
         }
 
         #region events
