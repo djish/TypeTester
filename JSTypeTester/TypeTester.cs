@@ -1,4 +1,6 @@
-﻿using Entities;
+﻿using DataManager;
+using Entities;
+using SpeedAnalyzer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -123,6 +125,12 @@ namespace JSTypeTester
         private void StopTestAndGetResult()
         {
             this.rTxtUserSpeed.Enabled = false;
+            string speedName = "_";
+            Speed speed = new Speed(speedName);
+            speed.SpeedText = this.rTxtUserSpeed.Text;
+
+            speed = SpeedPropertyExtractor.GetSpeedProperties(speed);
+            
         }
 
         #region events
